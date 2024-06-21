@@ -34,7 +34,7 @@ const ProductsPage = () => {
 
     const [cart, setCart] = useState([
       {
-        name : "Sepatu Puma",
+        id : "Sepatu Puma",
         qty : 1,
       }
     ]);
@@ -44,11 +44,11 @@ const ProductsPage = () => {
         window.location.href = '/login';
     };
 
-    const handleAddToCard = (productName) => {
+    const handleAddToCard = (id) => {
       setCart([
         ...cart,
         {
-          name : productName,
+          id,
           qty : 1,
         },
       ]);
@@ -68,19 +68,37 @@ const ProductsPage = () => {
             <CardProduct.Body name={product.name}>
               {product.description}
             </CardProduct.Body>
-            <CardProduct.Footer price={product.price} handleAddToCard={handleAddToCard}></CardProduct.Footer>
+            <CardProduct.Footer price={product.price} id={product.id} handleAddToCard={handleAddToCard}></CardProduct.Footer>
           </CardProduct>
         ))}
         </div>
         <div className="w-1/4">
           <h1 className="text-3xl font-bold text-blue-600">Cart</h1>
-          <ul>
-            {cart.map((item) => (
-              <li key={item.name}>
-                {item.name}
-              </li>
-            ))}
-          </ul>
+          <table>
+            <thead>
+              <tr>
+                <th>Product</th>
+                <th>Price</th>
+                <th>Quantity</th>
+                <th>Total</th>
+              </tr>
+            </thead>
+            <tbody>
+              {
+                cart.map((item) => {
+                  const product = products.find((product) => product.id === item.id);
+                  return (
+                    <tr key={item.id}>
+                      <td>{product.name}</td>
+                      <td>{product.price}</td>
+                      <td>{item.qty}</td>
+                      <td>{product.price * item.qty}</td>
+                    </tr>
+                  )
+                })
+              }
+            </tbody>
+          </table>
         </div>
       </div>
     </Fragment>
