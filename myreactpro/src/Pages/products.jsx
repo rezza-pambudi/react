@@ -1,13 +1,13 @@
-import { Fragment } from "react";
+import { Fragment, useState } from "react";
 import CardProduct from "../components/Fragments/CardProduct";
 import Button from "../components/elements/button";
-import Counter from "../components/Fragments/Counter";
+
 
 const products = [
   {
     id: 1,
     name: "Sepatu Adidas",
-    price: "Rp. 1.000.000",
+    price: 1000000,
     image: "/images/shoes-1.jpg",
     description: `lorem ipsum sit amet dolor lorem ipsum sit amet dolor lorem ipsum sit
         amet dolor lorem ipsum sit amet dolor lorem ipsum sit amet dolor`,
@@ -15,14 +15,14 @@ const products = [
   {
     id: 2,
     name: "Sepatu Nike",
-    price: "Rp. 500.000",
+    price: 500000,
     image: "/images/shoes-1.jpg",
     description: `lorem ipsum sit amet dolor lorem ipsum sit amet dolor`,
   },
   {
     id: 3,
     name: "Sepatu Puma",
-    price: "Rp. 800.000",
+    price: 800000,
     image: "/images/shoes-1.jpg",
     description: `lorem ipsum sit amet dolor lorem`,
   },
@@ -31,30 +31,57 @@ const products = [
 const email = localStorage.getItem("email");
 
 const ProductsPage = () => {
+
+    const [cart, setCart] = useState([
+      {
+        name : "Sepatu Puma",
+        qty : 1,
+      }
+    ]);
     const handleLogout = () => {
         localStorage.removeItem('email');
         localStorage.removeItem('password');
         window.location.href = '/login';
     };
+
+    const handleAddToCard = (productName) => {
+      setCart([
+        ...cart,
+        {
+          name : productName,
+          qty : 1,
+        },
+      ]);
+    };
+
   return (
     <Fragment>
       <div className="flex justify-end h-20 bg-blue-600 text-white items-center px-10">
         {email}
-        <Button className="ml-2 bg-black" onClick={handleLogout}>Logout</Button>
+        <Button variant='bg-black' className="" onClick={handleLogout}>Logout</Button>
       </div>
       <div className="flex justify-center py-5">
+        <div className="w-3/4 flex flex-wrap">
         {products.map((product) => (
           <CardProduct key={product.id}>
             <CardProduct.Header image={product.image}></CardProduct.Header>
             <CardProduct.Body name={product.name}>
               {product.description}
             </CardProduct.Body>
-            <CardProduct.Footer price={product.price}></CardProduct.Footer>
+            <CardProduct.Footer price={product.price} handleAddToCard={handleAddToCard}></CardProduct.Footer>
           </CardProduct>
         ))}
-      </div>
-      <div className="flex w-100 justify-center">
-        <Counter></Counter>
+        </div>
+        <div className="w-1/4">
+          <h1 className="text-3xl font-bold text-blue-600">Cart</h1>
+          <ul>
+            {cart.map((item) => (
+              <li key={item.name}>
+                {item.name}
+              </li>
+            ))}
+          </ul>
+        </div>
       </div>
     </Fragment>
   );
