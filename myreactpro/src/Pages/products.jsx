@@ -34,7 +34,7 @@ const ProductsPage = () => {
 
     const [cart, setCart] = useState([
       {
-        id : "Sepatu Puma",
+        id : 1,
         qty : 1,
       }
     ]);
@@ -45,13 +45,11 @@ const ProductsPage = () => {
     };
 
     const handleAddToCard = (id) => {
-      setCart([
-        ...cart,
-        {
-          id,
-          qty : 1,
-        },
-      ]);
+      if(cart.find((item) => item.id === id)){
+        setCart(cart.map((item) => item.id === id ? {...item, qty: item.qty + 1} : item));
+      } else {
+        setCart([...cart, {id, qty: 1}]);
+      }
     };
 
   return (
@@ -61,7 +59,7 @@ const ProductsPage = () => {
         <Button variant='bg-black' className="" onClick={handleLogout}>Logout</Button>
       </div>
       <div className="flex justify-center py-5">
-        <div className="w-3/4 flex flex-wrap">
+        <div className="w-4/6 flex flex-wrap">
         {products.map((product) => (
           <CardProduct key={product.id}>
             <CardProduct.Header image={product.image}></CardProduct.Header>
@@ -72,9 +70,9 @@ const ProductsPage = () => {
           </CardProduct>
         ))}
         </div>
-        <div className="w-1/4">
-          <h1 className="text-3xl font-bold text-blue-600">Cart</h1>
-          <table>
+        <div className="w-2/6">
+          <h1 className="text-3xl font-bold text-blue-600 ml-5 mb-2">Cart</h1>
+          <table className="text-left table-auto border-separate border-spacing-x-5">
             <thead>
               <tr>
                 <th>Product</th>
@@ -90,11 +88,11 @@ const ProductsPage = () => {
                   return (
                     <tr key={item.id}>
                       <td>{product.name}</td>
-                      <td>{product.price}</td>
+                      <td>Rp{" "}{product.price.toLocaleString('id-ID', { styles: 'currency', currency: 'IDR' })}</td>
                       <td>{item.qty}</td>
-                      <td>{product.price * item.qty}</td>
+                      <td>Rp{" "}{(item.qty * product.price).toLocaleString('id-ID', { styles: 'currency', currency: 'IDR' })}</td>
                     </tr>
-                  )
+                  );
                 })
               }
             </tbody>
