@@ -1,9 +1,10 @@
-import { useRef, useEffect } from "react";
+import { useRef, useEffect, useState } from "react";
 import InputForm from "../elements/Input";
 import Button from "../elements/button";
 import { login } from "../../services/auth.service";
 
 const FormLogin = () => {
+  const [loginFailed, setLoginFailed] = useState("");
   const handleLogin = (event) => {
     event.preventDefault();
     //localStorage.setItem('email', event.target.email.value);
@@ -17,7 +18,7 @@ const FormLogin = () => {
       if(status){
         localStorage.setItem("token", res);
       } else {
-        console.log(res.response.data);
+        setLoginFailed(res.response.data);
       }
     });
   };
@@ -29,6 +30,7 @@ const FormLogin = () => {
 
   return (
     <form onSubmit={handleLogin}>
+      {loginFailed && <p className="text-red-500">{loginFailed}</p>}
       <InputForm
         label="Username"
         type="text"
