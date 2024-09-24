@@ -30,7 +30,7 @@ const FormLogin = () => {
 
   return (
     <form onSubmit={handleLogin}>
-      {loginFailed && <p className="text-red-500">{loginFailed}</p>}
+      
       <InputForm
         label="Username"
         type="text"
@@ -45,6 +45,7 @@ const FormLogin = () => {
         name="password"
       />
       <Button variant="bg-blue-600" type="submit">Submit</Button>
+      {loginFailed && <p className="text-red-500 text-center mt-5">{loginFailed}</p>}
     </form>
   );
 };
