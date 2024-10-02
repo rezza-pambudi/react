@@ -5,14 +5,7 @@ const element = document.getElementById("root");
 const root = ReactDOM.createRoot(element);
 
 const App = () => {
-    const name = 'Pavelo';
-    const age = 30;
-    return (
-        <div>
-            <h1>Hello, {name}</h1>
-            <p>Age: {age}</p>
-        </div>
-    )
+    return <h1>Woooyyyy</h1>;
 };
 
 root.render(<App />);
