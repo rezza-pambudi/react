@@ -13,18 +13,18 @@ const decrementCounter = () => {
 const incrementCounter = () => {
     setCounter(counter + 1);    
 };
-let info;
-if (counter % 2 === 0) {
-    info = 'genap';
-} else {
-    info = 'ganjil';
-}
+// let info;
+// if (counter % 2 === 0) {
+//     info = 'genap';
+// } else {
+//     info = 'ganjil';
+// }
     return (
         <>
         <button onClick={decrementCounter}>-</button>
         <div>{counter}</div>
         <button onClick={incrementCounter}>+</button>
-        <div>{info}</div>
+        <div>{counter % 2 === 0 ? 'genap' : 'ganjil'}</div>
         </>
     )
 };
