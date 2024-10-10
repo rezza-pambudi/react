@@ -1,4 +1,5 @@
 import React from "react";
+import "./App.css";
 import { useState } from "react";
 
 // const Button = (props) => {
@@ -24,7 +25,7 @@ const incrementCounter = () => {
         <button onClick={decrementCounter}>-</button>
         <div>{counter}</div>
         <button onClick={incrementCounter}>+</button>
-        <div>{counter % 2 === 0 ? 'genap' : 'ganjil'}</div>
+        <div className={counter % 2 === 0 ? 'red' : 'blue'}>{counter > 10 && <div>Mantaps.!!!</div>}</div>
         </>
     )
 };

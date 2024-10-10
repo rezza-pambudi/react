@@ -1,14 +1,12 @@
 import "./App.css";
-import ProductCard from "./components/ProductCard";
-import { Products } from "./data/Product";
+import ProductList from "./components/ProductList";
 
 const App = () => {
   return (
-    <div className="cards">
-      {Products.map((product) => {
-        return <ProductCard key={product.id} {...product} />;
-      })}
-    </div>
+    <>
+    <div className="app-title">Product List</div>
+    <ProductList />
+    </>
   );
 };
 

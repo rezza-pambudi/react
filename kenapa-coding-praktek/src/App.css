@@ -4,7 +4,6 @@
 .app-title {
   font-size: 48px;
   font-weight: 700px;
-  text-shadow: 2px 2px;
   display: flex;
   justify-content: center;
   margin: 20px 150px;
@@ -170,6 +169,9 @@
 }
 .container {
   padding: 2px 16px;
+}
+.w-100 {
+  max-width: 100%;
 }
 @media screen and (max-width: 1300px) {
   .cards {
