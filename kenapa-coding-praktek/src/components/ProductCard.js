@@ -26,21 +26,23 @@ const ProductCard = (props) => {
         </h4>
         <p>{props.deskripsi}</p>
       </div>
-      <div className="card-keranjang jumlah-product">
+      <div
+        className={`card-keranjang ${
+          jumlahProduct > 0 ? "jumlah-product" : "show-keranjang"
+        }`}
+      >
         {jumlahProduct > 0 ? (
           <>
-          <button onClick={kurangProduct} className="button">
-          -
-        </button>
-        <div>{jumlahProduct}</div>
-        <button onClick={tambahProduct} className="button">
-          +
-        </button>
+            <button onClick={kurangProduct} className="button">
+              -
+            </button>
+            <div>{jumlahProduct}</div>
+            <button onClick={tambahProduct} className="button">
+              +
+            </button>
           </>
         ) : (
-          <button onClick={tambahProduct} className="button">
-            Keranjang
-          </button>
+          <div onClick={tambahProduct}>Keranjang</div>
         )}
       </div>
     </div>
