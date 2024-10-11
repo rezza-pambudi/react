@@ -42,7 +42,7 @@ const ProductCard = (props) => {
             </button>
           </>
         ) : (
-          <div onClick={tambahProduct}>Keranjang</div>
+          <div className="keranjang" onClick={tambahProduct}>Keranjang</div>
         )}
       </div>
     </div>
