@@ -1,36 +1,20 @@
 import React from "react";
 import "./App.css";
 import { useState } from "react";
+import CreateForm from "./components/CreateForm";
 
 const App = () => {
-  const initialState = {
-    nama: "",
-    hobby: "",
-    agama: "",
-  }
-  const [data, setData] = useState(initialState);
-  const { nama, hobby, agama } = data;
-  const handleSubmit = (event) => {
-    event.preventDefault();
-    console.log(data);
-  };
-  const handleChange = (event) => {
-    setData({...data, [event.target.name]: event.target.value});
+  const [nama, setNama] = useState("");
+  const onCreate = (data) => {
+    console.log("ini console dari parent component", data);
+    setNama(data,nama);
   };
 
   return (
     <>
-      <form onSubmit={handleSubmit} action="">
-        <label htmlFor="">Nama</label>
-        <input type="text" onChange={handleChange} value={nama} name="nama" />
-        <label htmlFor="">Hobby</label>
-        <input type="text" onChange={handleChange} value={hobby} name="hobby" />
-        <label htmlFor="">Agama</label>
-        <input type="text" onChange={handleChange} value={agama} name="agama"/>
-        <input type="submit" value="Submit" />
-      </form>
+    <CreateForm onCreate={onCreate} />
     </>
-  );
+  )
 };
 
 export default App;
