@@ -10,9 +10,13 @@ const myProfile = {
     agama: "Islam",
 };
 
+const { name, hobby, agama } = myProfile;
+console.log(name, hobby, agama);
+
 const updateProfile = {
     name: "Ahmad",
     makananFavorit: "Nasi Goreng",
+    agama: "Islam",
 };
 
 const myProfileUpdate = {
