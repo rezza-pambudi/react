@@ -77,9 +77,10 @@
 
   border-radius: 5px;
   border: none;
-  width: 100%;
+  /* width: 100%; */
   color: white;
   cursor: pointer;
+  background: #6cb8f7;
 }
 .add-toggle {
   background: rgb(108, 184, 247);
