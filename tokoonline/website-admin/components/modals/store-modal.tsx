@@ -32,10 +32,10 @@ export const StoreModal = () => {
     return (
         <Modal title="Buat Store" description="Tambahkan Store untuk membuat produk dan kategori" isOpen={storeModal.isOpen} onClose={storeModal.onClose}>
             <div>
-                <div>
+                <div className="space-y-4 py-2 pb-4">
                     <Form {...form}>
-                        <form>
-                            <FormField
+                        <form onSubmit={form.handleSubmit(onSubmit)}>
+                            <FormField 
                             control={form.control}
                             name="name"
                             render={({ field }) => (
@@ -48,10 +48,11 @@ export const StoreModal = () => {
                                 </FormItem>
                             )}
                             />
-                            <div>
-                                <Button
-                                
+                            <div className="pt-6 space-x-2 flex items-center justify-items-end w-full">
+                                <Button variant="outline" onClick={storeModal.onClose}
                                 >Cancel</Button>
+                                <Button type="submit"
+                                >Continue</Button>
                             </div>
                         </form>
                     </Form>
