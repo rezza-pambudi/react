@@ -4,6 +4,7 @@ import "./globals.css";
 
 import { ClerkProvider } from "@clerk/nextjs";
 import { ModalProvider } from "@/provider/modal-provider";
+import db from "@/lib/db";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -17,6 +18,8 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+
+  const store = db.store
 
   return (
     <ClerkProvider afterSignOutUrl="/">
