@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
+import 'swiper/css';
+import 'swiper/css/autoplay';
 import "./globals.css";
 
 const geistSans = localFont({
