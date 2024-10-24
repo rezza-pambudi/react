@@ -15,6 +15,7 @@ import images from '../../data/images.js';
 export default function adsCarousel() {
   return (
     <>
+    
       <Swiper
         spaceBetween={30}
         centeredSlides={true}
@@ -29,16 +30,19 @@ export default function adsCarousel() {
         modules={[Autoplay, Pagination, Navigation]}
         className="mySwiper"
       >
-        <SwiperSlide>Slide 1</SwiperSlide>
-        <SwiperSlide>Slide 2</SwiperSlide>
-        <SwiperSlide>Slide 3</SwiperSlide>
-        <SwiperSlide>Slide 4</SwiperSlide>
-        <SwiperSlide>Slide 5</SwiperSlide>
-        <SwiperSlide>Slide 6</SwiperSlide>
-        <SwiperSlide>Slide 7</SwiperSlide>
-        <SwiperSlide>Slide 8</SwiperSlide>
-        <SwiperSlide>Slide 9</SwiperSlide>
+        {images.map((image) => (
+        <SwiperSlide>
+        <div key={image.id} className="w-1/3">
+          <img
+            src={image.url}
+            alt={image.alt}
+            className="object-cover rounded-lg"
+          />
+        </div>
+        </SwiperSlide>
+        ))}
       </Swiper>
+      
     </>
   );
 }
