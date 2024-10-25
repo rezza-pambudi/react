@@ -1,4 +1,6 @@
-import React, { useRef, useState } from 'react';
+'use client';
+
+import React from 'react';
 // Import Swiper React components
 import { Swiper, SwiperSlide } from 'swiper/react';
 
@@ -10,9 +12,11 @@ import 'swiper/css/navigation';
 // import required modules
 import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
-import images from '../../data/images.js';
+import Image from 'next/image.js';
 
-export default function adsCarousel() {
+import images from '../app/data/images.js';
+
+export default function swiperAdsCarousel() {
   return (
     <>
     
@@ -33,10 +37,12 @@ export default function adsCarousel() {
         {images.map((image) => (
         <SwiperSlide>
         <div key={image.id} className="w-1/3">
-          <img
+          <Image
             src={image.url}
             alt={image.alt}
-            className="object-cover rounded-lg"
+            className="block h-full w-full object-cover"
+            width={300}
+            height={300}
           />
         </div>
         </SwiperSlide>
