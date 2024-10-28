@@ -14,7 +14,9 @@ import { Autoplay, Pagination, Navigation } from 'swiper/modules';
 
 import Image from 'next/image.js';
 
-import images from '../app/data/images.js';
+import './swiper-ads-carousel.css';
+
+import images from '../../app/data/images.js';
 
 export default function swiperAdsCarousel() {
   return (
@@ -36,13 +38,13 @@ export default function swiperAdsCarousel() {
       >
         {images.map((image) => (
         <SwiperSlide>
-        <div key={image.id} className="w-1/3">
+        <div key={image.id} className="w-full">
           <Image
             src={image.url}
             alt={image.alt}
             className="block h-full w-full object-cover"
-            width={300}
-            height={300}
+            width={1200}
+            height={1200}
           />
         </div>
         </SwiperSlide>

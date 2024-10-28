@@ -1,0 +1,23 @@
+.swiper-pagination-fraction, .swiper-pagination-custom, .swiper-horizontal > .swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal {
+    /* position: sticky;
+    bottom: 10px; 
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: center; */
+}
+
+.swiper-button-prev:after, .swiper-button-next:after {
+display: inline-flex; 
+justify-content: center; 
+align-items: center; 
+border-radius: 9999px; 
+width: 2.5rem; 
+height: 2.5rem; 
+}
+
+@media (min-width: 768px) {
+  .swiper-pagination {
+    /* bottom: -1.5rem !important; */
+  }
+}
