@@ -6,6 +6,7 @@ import Navbar from "../../components/navbar/navbar";
 import sectionAbout from "./about/page";
 import adsCarousel from "./ads-carousel/page";
 import sectionProgram from "./program/page";
+import footer from "@/components/footer/footer";
 
 const Home = () => {
   return (
@@ -15,6 +16,7 @@ const Home = () => {
       {sectionAbout()}
       {adsCarousel()}
       {sectionProgram()}
+      {footer()}
     </div>
   );
 }
