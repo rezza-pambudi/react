@@ -1,5 +1,6 @@
 import React from "react";
 import "./footer.css";
+import Image from "next/image";
 
 export default function footer() {
   return (
@@ -11,10 +12,12 @@ export default function footer() {
         <div className="mx-auto max-w-6xl pt-2 pb-2 sm:px-[20px] lg:px-[20px]">
           <div className="md:flex md:justify-between">
             <div className="mx-0 md:mx-0 mb-6 md:mb-0">
-              <img
-                src="../assets/images/footer/logo-detikcom-awards.png"
+              <Image
+                src="/images/footer/logo-detikcom-awards.png"
                 className="w-[186px] mx-auto mb-5 md:ml-0 md:mb-5"
                 alt=""
+                width={186}
+                height={186}
               />
               <div className="grid grid-cols-4 md:grid-cols-4 gap-4">
                 <div className="col-span-4 md:col-span-3">
@@ -37,10 +40,12 @@ export default function footer() {
                         target="_blank"
                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <img
+                        <Image
                           className="w-[32px] md:w-[32px]"
-                          src="../assets/images/footer/sosmed/facebook.png"
+                          src="/images/footer/sosmed/facebook.png"
                           alt=""
+                          width={32}
+                          height={32}
                         />
                       </a>
                     </div>
@@ -50,10 +55,12 @@ export default function footer() {
                         target="_blank"
                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <img
+                        <Image
                           className="w-[32px] md:w-[32px]"
-                          src="../assets/images/footer/sosmed/twitter.png"
+                          src="/images/footer/sosmed/twitter.png"
                           alt=""
+                          width={32}
+                          height={32}
                         />
                       </a>
                     </div>
@@ -63,10 +70,12 @@ export default function footer() {
                         target="_blank"
                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <img
+                        <Image
                           className="w-[32px] md:w-[32px]"
-                          src="../assets/images/footer/sosmed/instagram.png"
+                          src="/images/footer/sosmed/instagram.png"
                           alt=""
+                          width={32}
+                          height={32}
                         />
                       </a>
                     </div>
@@ -76,10 +85,11 @@ export default function footer() {
                         target="_blank"
                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <img
+                        <Image
                           className="w-[32px] md:w-[32px]"
-                          src="../assets/images/footer/sosmed/linkedin.png"
-                          alt=""
+                          src="/images/footer/sosmed/linkedin.png" alt=""
+                          width={32}
+                          height={32}
                         />
                       </a>
                     </div>
@@ -89,10 +99,12 @@ export default function footer() {
                         target="_blank"
                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <img
+                        <Image
                           className="w-[32px] md:w-[32px]"
-                          src="../assets/images/footer/sosmed/youtube.png"
+                          src="/images/footer/sosmed/youtube.png"
                           alt=""
+                          width={32}
+                          height={32}
                         />
                       </a>
                     </div>
@@ -111,10 +123,12 @@ export default function footer() {
                         target="_blank"
                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <img
+                        <Image
                           className="w-[32px] md:w-[32px] mx-1"
-                          src="../assets/images/footer/sosmed/facebook.png"
+                          src="/images/footer/sosmed/facebook.png"
                           alt=""
+                          width={32}
+                          height={32}
                         />
                       </a>
                     </div>
@@ -124,10 +138,12 @@ export default function footer() {
                         target="_blank"
                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <img
+                        <Image
                           className="w-[32px] md:w-[32px] mx-1"
-                          src="../assets/images/footer/sosmed/twitter.png"
+                          src="/images/footer/sosmed/twitter.png"
                           alt=""
+                          width={32}
+                          height={32}
                         />
                       </a>
                     </div>
@@ -137,10 +153,12 @@ export default function footer() {
                         target="_blank"
                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <img
+                        <Image
                           className="w-[32px] md:w-[32px] mx-1"
-                          src="../assets/images/footer/sosmed/instagram.png"
+                          src="/images/footer/sosmed/instagram.png"
                           alt=""
+                          width={32}
+                          height={32}
                         />
                       </a>
                     </div>
@@ -150,10 +168,12 @@ export default function footer() {
                         target="_blank"
                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <img
+                        <Image
                           className="w-[32px] md:w-[32px] mx-1"
-                          src="../assets/images/footer/sosmed/linkedin.png"
+                          src="/images/footer/sosmed/linkedin.png"
                           alt=""
+                          width={32}
+                          height={32}
                         />
                       </a>
                     </div>
@@ -163,10 +183,12 @@ export default function footer() {
                         target="_blank"
                         className="text-gray-500 hover:text-gray-900 dark:hover:text-white"
                       >
-                        <img
+                        <Image
                           className="w-[32px] md:w-[32px] mx-1"
-                          src="../assets/images/footer/sosmed/youtube.png"
+                          src="/images/footer/sosmed/youtube.png"
                           alt=""
+                          width={32}
+                          height={32}
                         />
                       </a>
                     </div>
