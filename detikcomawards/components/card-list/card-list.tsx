@@ -2,20 +2,30 @@
 
 import React from "react";
 
-export default function CardList({ title, description }) {
+export default function CardList({ title, description, image }) {
   return (
-    <div className="card">
-      <h3>{title}</h3>
-      <p>{description}</p>
-      <style jsx>{`
-        .card {
-          border: 1px solid #ddd;
-          border-radius: 8px;
-          padding: 16px;
-          margin: 8px 0;
-          box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1);
-        }
-      `}</style>
-    </div>
+    <>
+        <div className="card-contents">
+          <a href="{clickurl}">
+            <div className="wrap-contents">
+              <div className="h-[180px]">
+                <img
+                  className="img-contents"
+                  src={image}
+                  alt="Image Description"
+                />
+              </div>
+              <div className="p-4 md:p-5">
+                <div className="max-h-[80px]">
+                  <p className="p-contents">{title}</p>
+                </div>
+                <div>
+                  <p className="date-contents">{description}</p>
+                </div>
+              </div>
+            </div>
+          </a>
+        </div>
+    </>
   );
 }

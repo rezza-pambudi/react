@@ -6,6 +6,28 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+@layer components {
+  .card-contents {
+    @apply col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-4 grid items-center;
+  }
+
+  .wrap-contents {
+    @apply flex flex-col shadow-sm rounded-xl text-white h-[310px] sm:h-[320px] lg:h-[360px];
+  }
+
+  .img-contents {
+    @apply w-full h-[180px] rounded-[20px] object-cover;
+  }
+
+  .p-contents {
+    @apply text-[18px] leading-[25px] font-bold overflow-ellipsis overflow-hidden w-full line-clamp-3;
+  }
+
+  .date-contents {
+    @apply text-[12px] leading-[18px] mt-1;
+  }
+}
+
 @layer utilities {
   .text-balance {
     text-wrap: balance;
