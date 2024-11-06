@@ -16,6 +16,8 @@ export default function sectionNewsList() {
     fetchData();
   }, []);
 
+  type products = { id: number; image: number; title: string; description: string };
+
   return (
     <>
       <div className="bg-[#050012]">
@@ -35,7 +37,7 @@ export default function sectionNewsList() {
                         key={product.id}
                         image={product.image}
                         title={product.title}
-                        description={product.body}
+                        description={product.description}
                       />
                     ))}
                   </div>
@@ -47,7 +49,7 @@ export default function sectionNewsList() {
                         key={product.id}
                         image={product.image}
                         title={product.title}
-                        description={product.body}
+                        description={product.description}
                       />
                     ))}
                   </div>
@@ -59,7 +61,7 @@ export default function sectionNewsList() {
                         key={product.id}
                         image={product.image}
                         title={product.title}
-                        description={product.body}
+                        description={product.description}
                       />
                     ))}
                   </div>
