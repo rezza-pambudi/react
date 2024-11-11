@@ -3,10 +3,88 @@
 @tailwind utilities;
 
 body {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'outfit-light', sans-serif;
 }
 
 @layer components {
+  @font-face {
+    font-family: "outfit-light";
+    src: local("outfit-light"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/uncovered/Outfit-Light.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "outfit-regular";
+    src: local("outfit-regular"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/detikcom-awards/Outfit-Regular.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "outfit-medium";
+    src: local("outfit-medium"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/uncovered/Outfit-Medium.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "outfit-semibold";
+    src: local("outfit-semibold"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/detikcom-awards/Outfit-SemiBold.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "outfit-bold";
+    src: local("outfit-bold"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/uncovered/Outfit-Bold.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "outfit-extrabold";
+    src: local("outfit-extrabold"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/uncovered/Outfit-ExtraBold.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "broadsheet-ldo";
+    src: local("broadsheet-ldo"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/detikcom-awards/Broadsheet-LDO.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "montserrat-light";
+    src: local("montserrat-light"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/detikcom-awards/Montserrat-Light.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "montserrat-regular";
+    src: local("montserrat-regular"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/detikcom-awards/Montserrat-Regular.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "montserrat-medium";
+    src: local("montserrat-medium"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/detikcom-awards/Montserrat-Medium.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "montserrat-semibold";
+    src: local("montserrat-semibold"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/detikcom-awards/Montserrat-SemiBold.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "montserrat-bold";
+    src: local("montserrat-bold"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/detikcom-awards/Montserrat-Bold.ttf)
+        format("truetype");
+  }
+  @font-face {
+    font-family: "montserrat-extrabold";
+    src: local("montserrat-extrabold"),
+      url(https://cdnstatic.detik.com/live/2023/microsite/detikcom-awards/Montserrat-ExtraBold.ttf)
+        format("truetype");
+  }
   .card-contents {
     @apply col-span-12 sm:col-span-6 md:col-span-4 lg:col-span-4 grid items-center;
   }
