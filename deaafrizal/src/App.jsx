@@ -6,12 +6,11 @@ function App() {
   const [count, setCount] = useState(1)
   const [article, setArticle] = useState("")
 
-  function nextPage() {
-    setCount(count + 1)
-  }
-
   function prevPage() {
     setCount(count - 1)
+  }
+  function nextPage() {
+    setCount(count + 1)
   }
 
   useEffect(() => {
@@ -26,8 +25,8 @@ function App() {
         <header>
           <p>{count}</p>
         </header>
-        <button onClick={nextPage}>Next Page</button>
         <button onClick={prevPage}>Previous Page</button>
+        <button onClick={nextPage}>Next Page</button>
         <article>
           <h3>{article.title}</h3>
           <p>{article.body}</p>
