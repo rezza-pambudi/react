@@ -1,7 +1,10 @@
+import './HelloWorld.css';
+
 function HelloWorld() {
+    const props = { text: "Hello World" };
     return (
         <div>
-            <HeaderHelloWorld text="Hello World" />
+            <HeaderHelloWorld {...props} />
             <ParagraphHelloWorld />
         </div>
     )
@@ -9,15 +12,14 @@ function HelloWorld() {
 
 function HeaderHelloWorld({text = "Ups, lupa kasih teks"}) {
     return (
-        <h1 style={{ color: "blue", backgroundColor: "aqua" }}>{text.toUpperCase()}</h1>
+        <h1 className="title"> {text.toUpperCase()}</h1>
     )
 }
 
 function ParagraphHelloWorld() {
     const text = "Ini paragraph";
-    const style = { color: "red", backgroundColor: "yellow" };
     return (
-        <p style={style}>{text.toLocaleLowerCase()}</p>
+        <p className='content'>{text.toLocaleLowerCase()}</p>
     )
 }
 
