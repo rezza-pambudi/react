@@ -3,6 +3,11 @@ import HelloWorld from "./HelloWorld";
 import { StrictMode } from "react";
 import Container from "./Container";
 import TodoList from "../todolist/TodoList";
+import Table from "../table/Table";
+import AlertButton from "../button/AlertButton";
+import MyButton from "../button/MyButton";
+import SayHelloForm from "../form/SayHelloForm";
+import Counter from "../form/Counter";
 
 createRoot(document.getElementById("root"))
     .render(
@@ -10,6 +15,11 @@ createRoot(document.getElementById("root"))
             <Container>
                 <HelloWorld />
                 <TodoList />
+                <Table />
+                <AlertButton text="Click Me" message="Button Clicked"/>
+                <MyButton text="Smash me" onSmash={() => alert("You Smash Me")}/>
+                <SayHelloForm />
+                <Counter />
             </Container>
         </StrictMode>
     );
